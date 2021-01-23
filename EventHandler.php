@@ -102,9 +102,9 @@ final class EventHandler extends MadelineProtoEventHandler
      *
      * @param array $update
      *
-     * @return Generator|void
+     * @return Generator
      */
-    public function onUpdateNewChannelMessage(array $update)
+    public function onUpdateNewChannelMessage(array $update): Generator
     {
         return $this->onUpdateNewMessage($update);
     }
@@ -114,9 +114,9 @@ final class EventHandler extends MadelineProtoEventHandler
      *
      * @param array $update
      *
-     * @return Generator|void
+     * @return Generator
      */
-    public function onUpdateNewMessage(array $update)
+    public function onUpdateNewMessage(array $update): Generator
     {
         try {
             if ($update['message']['_'] !== 'message') {
@@ -265,9 +265,9 @@ final class EventHandler extends MadelineProtoEventHandler
      * @param int   $delay
      * @param array ...$extra
      *
-     * @return Generator|void
+     * @return Generator
      */
-    private function delMsg(array $update, array $messageIds, int $delay = 0, array ...$extra)
+    private function delMsg(array $update, array $messageIds, int $delay = 0, array ...$extra): Generator
     {
         try {
             if ($delay > 5) {

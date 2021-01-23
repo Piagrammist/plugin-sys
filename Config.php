@@ -15,7 +15,7 @@ class Config
      *
      * @var string
      */
-    public const ADMIN = "me";
+    public const ADMIN = 'me';
 
     /**
      * Info of an app that registered on my.telegram.
